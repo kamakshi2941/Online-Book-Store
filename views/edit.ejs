@@ -1,0 +1,74 @@
+<!--Assignment #2 
+    Name : Aishwarya Dalal
+    Student Number : 8843829 -->
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compitable" content="IE=edge">
+        <meta name="viewport" content="width=device-width", initial-scale="1.0">
+        <title>Aishwarya Dalal</title>
+        <link rel="stylesheet" type="text/css" href="/css/catalog.css">
+        <script type="text/javascript" src="/js/catalog.js" defer></script>
+    </head>
+    <body>
+        <div>
+    
+            <!-- Header including website logo and other images for design -->
+            <%- include('layouts/header'); -%>
+
+            <%- include('layouts/nav'); -%>
+    
+            <!-- Display all the available products -->
+            <center><p class="headingText">EDIT FAVOURITE BOOK</p></center>
+            <section class="w50">
+                <form name="myform" method="Post" onsubmit="return formSubmit();"  action="" >
+                  <label>Book Title</label>
+                  <input id="title" placeholder="Book Title" type="text" name="title" value="<%= book.book_title %>"><br/>
+            
+                  <label>Author</label>
+                  <input id="author" placeholder="XYZ" type="text" name="author" value="<%= book.author %>"><br/>
+            
+                  <label>Genre</label>
+                  <select name="genre" id="genre">
+                      <option value="">----- Select -----</option>
+                      <option value="Fiction" <% if(book.genre == 'Fiction') { %> selected <% } %> >Fiction</option>
+                      <option value="Thriller"  <% if(book.genre == 'Thriller') { %> selected <% } %> >Thriller</option>
+                      <option value="Motivational"  <% if(book.genre == 'Motivational') { %> selected <% } %> >Motivational</option>
+                      <option value="Novel"  <% if(book.genre == 'Novel') { %> selected <% } %> >Novel</option>
+                      <option value="History"  <% if(book.genre == 'History') { %> selected <% } %> >History</option>
+                      <option value="Biography"  <% if(book.genre == 'Biography') { %> selected <% } %> >Biography</option>
+                      <option value="Comic"  <% if(book.genre == 'Comic') { %> selected <% } %> >Comic</option>
+                  </select>
+            
+                  <label>Upload your Book Image</label>
+                  <input type="file" id="bimg" name="bimg" accept="image/*">
+
+                  <br/><br/>
+            
+                  <input type="submit" value="Update">
+                  <p id="errors">
+            
+                    <%
+                        if(typeof(errors) != 'undefined')
+                        {
+                            for (let error of errors){
+                    %>
+                                <p class="errors"> <%= error.msg %> </p>
+                    <%
+                            }
+                        }
+                    %>
+            
+                  </p>
+                </form> 
+            </section>
+              <div class="clear"></div>
+            
+    
+            <!-- Footer having information related to website  -->
+            <%- include('layouts/footer'); -%>
+        </div>
+    </body>
+    <!-- Student ID : Adalal3829@conestogac.on.ca -->
+    </html>

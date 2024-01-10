@@ -1,0 +1,38 @@
+<!--Assignment #2 
+    Name : Aishwarya Dalal
+    Student Number : 8843829 -->
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compitable" content="IE=edge">
+        <meta name="viewport" content="width=device-width", initial-scale="1.0">
+        <title>Aishwarya Dalal</title>
+        <link rel="stylesheet" type="text/css" href="/css/catalog.css">
+        <script type="text/javascript" src="/js/catalog.js" defer></script>
+    </head>
+    <body>
+        <div>
+    
+            <!-- Header including website logo and other images for design -->
+            <%- include('layouts/header'); -%>
+
+            <%- include('layouts/nav'); -%>
+    
+            <!-- Display all the available products -->
+            <center><p class="headingText">BOOK UPDATED SUCCESSFULLY</p></center>
+            <div class="mainContainer" id="mainProdContainer">
+                <div class="booksContainer">
+                    <center><img src="/<%= image %>" id="bookImgs"></center>
+                    <div id="nameDiv"><b>Title : <%= book_title %></b></div>
+                    <div id="authDiv">Author : <%= author %></div>
+                    <div id="genreDiv">Genre : <%= genre %></div>
+                </div>
+            </div>
+    
+            <!-- Footer having information related to website  -->
+            <%- include('layouts/footer'); -%>
+        </div>
+    </body>
+    <!-- Student ID : Adalal3829@conestogac.on.ca -->
+    </html>

@@ -1,0 +1,48 @@
+<!--Assignment #2 
+    Name : Aishwarya Dalal
+    Student Number : 8843829 -->
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compitable" content="IE=edge">
+        <meta name="viewport" content="width=device-width", initial-scale="1.0">
+        <title>Aishwarya Dalal</title>
+        <link rel="stylesheet" type="text/css" href="css/catalog.css">
+        <script type="text/javascript" src="js/catalog.js" defer></script>
+    </head>
+    <body>
+        <div>
+    
+            <!-- Header including website logo and other images for design -->
+            <%- include('layouts/header'); -%>
+
+            <%- include('layouts/nav'); -%>
+    
+            <!-- Display all the available products -->
+            <center><p class="headingText">ALL FAVOURITE BOOKS</p></center>
+            <div class="mainContainer" id="mainProdContainer">
+                <%
+                    for (var book of favBooks) {
+                %>
+                <div class="booksContainer">
+                    <center><img src="<%= book.image %>" id="bookImgs"></center>
+                    <div id="nameDiv"><b>Title : <%= book.book_title %></b></div>
+                    <div id="authDiv">Author : <%= book.author %></div>
+                    <div id="genreDiv">Genre : <%= book.genre %></div>
+                    <div id="editdelete">
+                        <a href="/edit/<%= book._id %>"><img src="images/edit.png" class="edImg"></a>
+                        <a href="/delete/<%= book._id %>"><img src="images/delete.png" class="edImg"></a>
+                    </div>
+                </div>
+                <%
+                    }
+                %>
+            </div>
+    
+            <!-- Footer having information related to website  -->
+            <%- include('layouts/footer'); -%>
+        </div>
+    </body>
+    <!-- Student ID : Adalal3829@conestogac.on.ca -->
+    </html>
